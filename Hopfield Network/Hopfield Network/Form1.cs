@@ -147,6 +147,7 @@ namespace Hopfield_Network
                             1,  1,  1,
                            -1, -1, -1};
 
+            loophere:
             for(int row = 0; row < pattern.Length; row++)
             {
                 int value = 0;
@@ -156,6 +157,14 @@ namespace Hopfield_Network
                 }
                 // threshold
                 newPattern[row] = value > 0 ? 1 : -1;
+            }
+
+            if (newPattern.SequenceEqual(plus)) return newPattern;
+            else if (newPattern.SequenceEqual(minus)) return newPattern;
+            else
+            {
+                pattern = newPattern;
+                goto loophere;
             }
 
             return newPattern;
