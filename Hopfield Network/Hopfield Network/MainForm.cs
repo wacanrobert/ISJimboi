@@ -79,18 +79,28 @@ namespace Hopfield_Network
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            radioButtonPlus.Checked = false;
+            radioButtonMinus.Checked = false;
+
             for (int i = 0; i < 9; i++)
             {
-                PictureBox cell = (PictureBox)this.Controls.Find("cell_" + (i + 1), true)[0];
+                PictureBox cellInput = (PictureBox)this.Controls.Find("cell_" + (i + 1), true)[0];
+                PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
 
-                cell.BackColor = Color.White;
+                cellInput.BackColor = Color.White;
+                cellOutput.BackColor = Color.White;
             }
 
+            generateButton.Enabled = false;
+        }
+
+        private void ResetOutput()
+        {
             for (int i = 0; i < 9; i++)
             {
-                PictureBox output = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true)[0];
-                
-                output.BackColor = Color.White;
+                PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
+
+                cellOutput.BackColor = Color.White;
             }
         }
 
@@ -122,9 +132,9 @@ namespace Hopfield_Network
 
             for (int i = 0; i < pattern1.Length; i++)
             {
-                PictureBox cell = (PictureBox) this.Controls.Find("cell_" + (i + 1), true)[0];
+                PictureBox cellInput = (PictureBox) this.Controls.Find("cell_" + (i + 1), true)[0];
 
-                if (cell.BackColor == Color.White) pattern1[i] = -1;
+                if (cellInput.BackColor == Color.White) pattern1[i] = -1;
                 else pattern1[i] = 1;
             }
 
@@ -135,18 +145,18 @@ namespace Hopfield_Network
                 new Thread(() =>
                 {
                     newPattern = Calculate(pattern1, weight);
+
+                    for (int i = 0; i < pattern1.Length; i++)
+                    {
+                        PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
+                        if (newPattern[i] == -1) cellOutput.BackColor = Color.White;
+                        else cellOutput.BackColor = Color.Black;
+                    }
                 }).Start();
             }
             finally
             {
                 generateButton.Enabled = true;
-            }
-
-            for (int i = 0; i < pattern1.Length; i++)
-            {
-                PictureBox output = (PictureBox) this.Controls.Find("pictureBox" + (i + 1), true)[0];
-                if (newPattern[i] == -1) output.BackColor = Color.White;
-                else output.BackColor = Color.Black;
             }
         }
 
@@ -172,15 +182,23 @@ namespace Hopfield_Network
                 newPattern[row] = value > 0 ? 1 : -1;
             }
 
-            if (newPattern.SequenceEqual(plus)) return newPattern;
-            else if (newPattern.SequenceEqual(minus)) return newPattern;
-            else
-            {
-                pattern = newPattern;
-                goto loophere;
-            }
+            if (radioButtonPlus.Checked && newPattern.SequenceEqual(plus)) return newPattern;
+            if (radioButtonMinus.Checked && newPattern.SequenceEqual(minus)) return newPattern;
 
-            return newPattern;
+            pattern = newPattern;
+            goto loophere;
+        }
+
+        private void radioButtonPlus_CheckedChanged(object sender, EventArgs e)
+        {
+            generateButton.Enabled = true;
+            ResetOutput();
+        }
+
+        private void radioButtonMinus_CheckedChanged(object sender, EventArgs e)
+        {
+            generateButton.Enabled = true;
+            ResetOutput();
         }
     }
 }

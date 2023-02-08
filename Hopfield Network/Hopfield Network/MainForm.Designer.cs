@@ -39,15 +39,17 @@
             this.cell_9 = new System.Windows.Forms.PictureBox();
             this.generateButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_1 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_2 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_3 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_4 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_5 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_6 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_7 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_8 = new System.Windows.Forms.PictureBox();
+            this.cellOutput_9 = new System.Windows.Forms.PictureBox();
+            this.radioButtonPlus = new System.Windows.Forms.RadioButton();
+            this.radioButtonMinus = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.cell_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_3)).BeginInit();
@@ -57,15 +59,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.cell_7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_9)).BeginInit();
             this.SuspendLayout();
             // 
             // cell_1
@@ -169,6 +171,7 @@
             // 
             // generateButton
             // 
+            this.generateButton.Enabled = false;
             this.generateButton.Location = new System.Drawing.Point(340, 12);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
@@ -187,119 +190,145 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // pictureBox1
+            // cellOutput_1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(431, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.cellOutput_1.BackColor = System.Drawing.Color.White;
+            this.cellOutput_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_1.Location = new System.Drawing.Point(431, 12);
+            this.cellOutput_1.Name = "cellOutput_1";
+            this.cellOutput_1.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_1.TabIndex = 0;
+            this.cellOutput_1.TabStop = false;
             // 
-            // pictureBox2
+            // cellOutput_2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(537, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.cellOutput_2.BackColor = System.Drawing.Color.White;
+            this.cellOutput_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_2.Location = new System.Drawing.Point(537, 12);
+            this.cellOutput_2.Name = "cellOutput_2";
+            this.cellOutput_2.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_2.TabIndex = 0;
+            this.cellOutput_2.TabStop = false;
             // 
-            // pictureBox3
+            // cellOutput_3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(643, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.cellOutput_3.BackColor = System.Drawing.Color.White;
+            this.cellOutput_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_3.Location = new System.Drawing.Point(643, 12);
+            this.cellOutput_3.Name = "cellOutput_3";
+            this.cellOutput_3.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_3.TabIndex = 0;
+            this.cellOutput_3.TabStop = false;
             // 
-            // pictureBox4
+            // cellOutput_4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(431, 113);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.cellOutput_4.BackColor = System.Drawing.Color.White;
+            this.cellOutput_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_4.Location = new System.Drawing.Point(431, 113);
+            this.cellOutput_4.Name = "cellOutput_4";
+            this.cellOutput_4.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_4.TabIndex = 0;
+            this.cellOutput_4.TabStop = false;
             // 
-            // pictureBox5
+            // cellOutput_5
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(537, 113);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.cellOutput_5.BackColor = System.Drawing.Color.White;
+            this.cellOutput_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_5.Location = new System.Drawing.Point(537, 113);
+            this.cellOutput_5.Name = "cellOutput_5";
+            this.cellOutput_5.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_5.TabIndex = 0;
+            this.cellOutput_5.TabStop = false;
             // 
-            // pictureBox6
+            // cellOutput_6
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(643, 113);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            this.cellOutput_6.BackColor = System.Drawing.Color.White;
+            this.cellOutput_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_6.Location = new System.Drawing.Point(643, 113);
+            this.cellOutput_6.Name = "cellOutput_6";
+            this.cellOutput_6.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_6.TabIndex = 0;
+            this.cellOutput_6.TabStop = false;
             // 
-            // pictureBox7
+            // cellOutput_7
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.White;
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(431, 214);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
+            this.cellOutput_7.BackColor = System.Drawing.Color.White;
+            this.cellOutput_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_7.Location = new System.Drawing.Point(431, 214);
+            this.cellOutput_7.Name = "cellOutput_7";
+            this.cellOutput_7.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_7.TabIndex = 0;
+            this.cellOutput_7.TabStop = false;
             // 
-            // pictureBox8
+            // cellOutput_8
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.White;
-            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(537, 214);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
+            this.cellOutput_8.BackColor = System.Drawing.Color.White;
+            this.cellOutput_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_8.Location = new System.Drawing.Point(537, 214);
+            this.cellOutput_8.Name = "cellOutput_8";
+            this.cellOutput_8.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_8.TabIndex = 0;
+            this.cellOutput_8.TabStop = false;
             // 
-            // pictureBox9
+            // cellOutput_9
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.White;
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Location = new System.Drawing.Point(643, 214);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
+            this.cellOutput_9.BackColor = System.Drawing.Color.White;
+            this.cellOutput_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellOutput_9.Location = new System.Drawing.Point(643, 214);
+            this.cellOutput_9.Name = "cellOutput_9";
+            this.cellOutput_9.Size = new System.Drawing.Size(100, 95);
+            this.cellOutput_9.TabIndex = 0;
+            this.cellOutput_9.TabStop = false;
+            // 
+            // radioButtonPlus
+            // 
+            this.radioButtonPlus.AutoSize = true;
+            this.radioButtonPlus.Location = new System.Drawing.Point(340, 71);
+            this.radioButtonPlus.Name = "radioButtonPlus";
+            this.radioButtonPlus.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonPlus.TabIndex = 3;
+            this.radioButtonPlus.TabStop = true;
+            this.radioButtonPlus.Text = "+ Pattern";
+            this.radioButtonPlus.UseVisualStyleBackColor = true;
+            this.radioButtonPlus.CheckedChanged += new System.EventHandler(this.radioButtonPlus_CheckedChanged);
+            // 
+            // radioButtonMinus
+            // 
+            this.radioButtonMinus.AutoSize = true;
+            this.radioButtonMinus.Location = new System.Drawing.Point(340, 90);
+            this.radioButtonMinus.Name = "radioButtonMinus";
+            this.radioButtonMinus.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonMinus.TabIndex = 3;
+            this.radioButtonMinus.TabStop = true;
+            this.radioButtonMinus.Text = "- Pattern";
+            this.radioButtonMinus.UseVisualStyleBackColor = true;
+            this.radioButtonMinus.CheckedChanged += new System.EventHandler(this.radioButtonMinus_CheckedChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 361);
+            this.Controls.Add(this.radioButtonMinus);
+            this.Controls.Add(this.radioButtonPlus);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.generateButton);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.cellOutput_9);
+            this.Controls.Add(this.cellOutput_8);
             this.Controls.Add(this.cell_9);
-            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.cellOutput_7);
             this.Controls.Add(this.cell_8);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.cellOutput_6);
             this.Controls.Add(this.cell_7);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.cellOutput_5);
             this.Controls.Add(this.cell_6);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.cellOutput_4);
             this.Controls.Add(this.cell_5);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.cellOutput_3);
             this.Controls.Add(this.cell_4);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.cellOutput_2);
             this.Controls.Add(this.cell_3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cellOutput_1);
             this.Controls.Add(this.cell_2);
             this.Controls.Add(this.cell_1);
             this.MaximizeBox = false;
@@ -316,16 +345,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.cell_7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellOutput_9)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -342,15 +372,17 @@
         private System.Windows.Forms.PictureBox cell_9;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox cellOutput_1;
+        private System.Windows.Forms.PictureBox cellOutput_2;
+        private System.Windows.Forms.PictureBox cellOutput_3;
+        private System.Windows.Forms.PictureBox cellOutput_4;
+        private System.Windows.Forms.PictureBox cellOutput_5;
+        private System.Windows.Forms.PictureBox cellOutput_6;
+        private System.Windows.Forms.PictureBox cellOutput_7;
+        private System.Windows.Forms.PictureBox cellOutput_8;
+        private System.Windows.Forms.PictureBox cellOutput_9;
+        private System.Windows.Forms.RadioButton radioButtonPlus;
+        private System.Windows.Forms.RadioButton radioButtonMinus;
     }
 }
 
