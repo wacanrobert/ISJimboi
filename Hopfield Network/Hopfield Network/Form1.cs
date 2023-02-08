@@ -5,15 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Schema;
 
 namespace Hopfield_Network
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -127,11 +128,23 @@ namespace Hopfield_Network
                 else pattern1[i] = 1;
             }
 
-            int[] newPattern = Calculate(pattern1, weight);
+            int[] newPattern = new int[9];
+            try
+            {
+                generateButton.Enabled = false;
+                new Thread(() =>
+                {
+                    newPattern = Calculate(pattern1, weight);
+                }).Start();
+            }
+            finally
+            {
+                generateButton.Enabled = true;
+            }
 
             for (int i = 0; i < pattern1.Length; i++)
             {
-                PictureBox output = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true)[0];
+                PictureBox output = (PictureBox) this.Controls.Find("pictureBox" + (i + 1), true)[0];
                 if (newPattern[i] == -1) output.BackColor = Color.White;
                 else output.BackColor = Color.Black;
             }

@@ -1,6 +1,6 @@
 ﻿namespace Hopfield_Network
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,6 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cell_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_3)).BeginInit();
@@ -84,7 +83,7 @@
             // 
             this.cell_2.BackColor = System.Drawing.Color.White;
             this.cell_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_2.Location = new System.Drawing.Point(128, 12);
+            this.cell_2.Location = new System.Drawing.Point(118, 12);
             this.cell_2.Name = "cell_2";
             this.cell_2.Size = new System.Drawing.Size(100, 95);
             this.cell_2.TabIndex = 0;
@@ -95,7 +94,7 @@
             // 
             this.cell_3.BackColor = System.Drawing.Color.White;
             this.cell_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_3.Location = new System.Drawing.Point(249, 12);
+            this.cell_3.Location = new System.Drawing.Point(224, 12);
             this.cell_3.Name = "cell_3";
             this.cell_3.Size = new System.Drawing.Size(100, 95);
             this.cell_3.TabIndex = 0;
@@ -106,7 +105,7 @@
             // 
             this.cell_4.BackColor = System.Drawing.Color.White;
             this.cell_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_4.Location = new System.Drawing.Point(12, 125);
+            this.cell_4.Location = new System.Drawing.Point(12, 113);
             this.cell_4.Name = "cell_4";
             this.cell_4.Size = new System.Drawing.Size(100, 95);
             this.cell_4.TabIndex = 0;
@@ -117,7 +116,7 @@
             // 
             this.cell_5.BackColor = System.Drawing.Color.White;
             this.cell_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_5.Location = new System.Drawing.Point(128, 125);
+            this.cell_5.Location = new System.Drawing.Point(118, 113);
             this.cell_5.Name = "cell_5";
             this.cell_5.Size = new System.Drawing.Size(100, 95);
             this.cell_5.TabIndex = 0;
@@ -128,7 +127,7 @@
             // 
             this.cell_6.BackColor = System.Drawing.Color.White;
             this.cell_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_6.Location = new System.Drawing.Point(249, 125);
+            this.cell_6.Location = new System.Drawing.Point(224, 113);
             this.cell_6.Name = "cell_6";
             this.cell_6.Size = new System.Drawing.Size(100, 95);
             this.cell_6.TabIndex = 0;
@@ -139,7 +138,7 @@
             // 
             this.cell_7.BackColor = System.Drawing.Color.White;
             this.cell_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_7.Location = new System.Drawing.Point(12, 237);
+            this.cell_7.Location = new System.Drawing.Point(12, 214);
             this.cell_7.Name = "cell_7";
             this.cell_7.Size = new System.Drawing.Size(100, 95);
             this.cell_7.TabIndex = 0;
@@ -150,7 +149,7 @@
             // 
             this.cell_8.BackColor = System.Drawing.Color.White;
             this.cell_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_8.Location = new System.Drawing.Point(128, 237);
+            this.cell_8.Location = new System.Drawing.Point(118, 214);
             this.cell_8.Name = "cell_8";
             this.cell_8.Size = new System.Drawing.Size(100, 95);
             this.cell_8.TabIndex = 0;
@@ -161,7 +160,7 @@
             // 
             this.cell_9.BackColor = System.Drawing.Color.White;
             this.cell_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cell_9.Location = new System.Drawing.Point(249, 237);
+            this.cell_9.Location = new System.Drawing.Point(224, 214);
             this.cell_9.Name = "cell_9";
             this.cell_9.Size = new System.Drawing.Size(100, 95);
             this.cell_9.TabIndex = 0;
@@ -170,7 +169,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(381, 12);
+            this.generateButton.Location = new System.Drawing.Point(340, 12);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
             this.generateButton.TabIndex = 1;
@@ -180,7 +179,7 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(381, 42);
+            this.resetButton.Location = new System.Drawing.Point(340, 41);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 2;
@@ -192,116 +191,97 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(486, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(431, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 95);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.cell_1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(602, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(537, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 95);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.cell_2_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(723, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(643, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 95);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.cell_3_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(486, 125);
+            this.pictureBox4.Location = new System.Drawing.Point(431, 113);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 95);
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.cell_4_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(602, 125);
+            this.pictureBox5.Location = new System.Drawing.Point(537, 113);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 95);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.cell_5_Click);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(723, 125);
+            this.pictureBox6.Location = new System.Drawing.Point(643, 113);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 95);
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.cell_6_Click);
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(486, 237);
+            this.pictureBox7.Location = new System.Drawing.Point(431, 214);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 95);
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.cell_7_Click);
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(602, 237);
+            this.pictureBox8.Location = new System.Drawing.Point(537, 214);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(100, 95);
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.cell_8_Click);
             // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Location = new System.Drawing.Point(723, 237);
+            this.pictureBox9.Location = new System.Drawing.Point(643, 214);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(100, 95);
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.cell_9_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(378, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 399);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(754, 361);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.pictureBox9);
@@ -322,8 +302,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cell_2);
             this.Controls.Add(this.cell_1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(770, 400);
+            this.MinimumSize = new System.Drawing.Size(770, 400);
+            this.Name = "MainForm";
+            this.Text = "Main Form";
             ((System.ComponentModel.ISupportInitialize)(this.cell_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_3)).EndInit();
@@ -343,7 +326,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -369,7 +351,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label1;
     }
 }
 
