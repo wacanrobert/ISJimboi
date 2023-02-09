@@ -106,6 +106,7 @@ namespace Hopfield_Network
 
         private void generateButton_Click(object sender, EventArgs e)
         {
+            ResetOutput();
             int[] pattern1 = new int[9];
 
             /*
@@ -142,7 +143,7 @@ namespace Hopfield_Network
             try
             {
                 generateButton.Enabled = false;
-                new Thread(() =>
+                Thread thread = new Thread(() =>
                 {
                     newPattern = Calculate(pattern1, weight);
 
@@ -152,7 +153,9 @@ namespace Hopfield_Network
                         if (newPattern[i] == -1) cellOutput.BackColor = Color.White;
                         else cellOutput.BackColor = Color.Black;
                     }
-                }).Start();
+                });
+
+                thread.Start();
             }
             finally
             {
@@ -169,6 +172,7 @@ namespace Hopfield_Network
             int[] minus = {-1, -1, -1,
                             1,  1,  1,
                            -1, -1, -1};
+            int count = 0;
 
             loophere:
             for(int row = 0; row < pattern.Length; row++)
@@ -186,6 +190,10 @@ namespace Hopfield_Network
             if (radioButtonMinus.Checked && newPattern.SequenceEqual(minus)) return newPattern;
 
             pattern = newPattern;
+
+            if (count > 50) return pattern;
+            
+            count++;
             goto loophere;
         }
 
