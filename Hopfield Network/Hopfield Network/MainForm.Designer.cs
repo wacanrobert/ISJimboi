@@ -50,6 +50,7 @@
             this.cellOutput_9 = new System.Windows.Forms.PictureBox();
             this.radioButtonPlus = new System.Windows.Forms.RadioButton();
             this.radioButtonMinus = new System.Windows.Forms.RadioButton();
+            this.label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cell_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_3)).BeginInit();
@@ -171,7 +172,6 @@
             // 
             // generateButton
             // 
-            this.generateButton.Enabled = false;
             this.generateButton.Location = new System.Drawing.Point(340, 12);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
@@ -283,6 +283,7 @@
             // radioButtonPlus
             // 
             this.radioButtonPlus.AutoSize = true;
+            this.radioButtonPlus.Enabled = false;
             this.radioButtonPlus.Location = new System.Drawing.Point(340, 71);
             this.radioButtonPlus.Name = "radioButtonPlus";
             this.radioButtonPlus.Size = new System.Drawing.Size(68, 17);
@@ -295,6 +296,7 @@
             // radioButtonMinus
             // 
             this.radioButtonMinus.AutoSize = true;
+            this.radioButtonMinus.Enabled = false;
             this.radioButtonMinus.Location = new System.Drawing.Point(340, 90);
             this.radioButtonMinus.Name = "radioButtonMinus";
             this.radioButtonMinus.Size = new System.Drawing.Size(65, 17);
@@ -304,11 +306,20 @@
             this.radioButtonMinus.UseVisualStyleBackColor = true;
             this.radioButtonMinus.CheckedChanged += new System.EventHandler(this.radioButtonMinus_CheckedChanged);
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(340, 113);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(0, 13);
+            this.label.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 361);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.radioButtonMinus);
             this.Controls.Add(this.radioButtonPlus);
             this.Controls.Add(this.resetButton);
@@ -335,6 +346,7 @@
             this.MaximumSize = new System.Drawing.Size(770, 400);
             this.MinimumSize = new System.Drawing.Size(770, 400);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";
             ((System.ComponentModel.ISupportInitialize)(this.cell_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_2)).EndInit();
@@ -383,6 +395,7 @@
         private System.Windows.Forms.PictureBox cellOutput_9;
         private System.Windows.Forms.RadioButton radioButtonPlus;
         private System.Windows.Forms.RadioButton radioButtonMinus;
+        private System.Windows.Forms.Label label;
     }
 }
 

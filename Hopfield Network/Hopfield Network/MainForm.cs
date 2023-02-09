@@ -9,17 +9,30 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Schema;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace Hopfield_Network
 {
     public partial class MainForm : Form
     {
+        int[] plus = {-1, 1, -1,
+                       1, 1,  1,
+                      -1, 1, -1};
+        int[] minus = {-1, -1, -1,
+                        1,  1,  1,
+                       -1, -1, -1};
+        int[] iPlus = {1, -1, 1,
+                       -1, -1,  -1,
+                      1, -1, 1};
+        int[] iMinus = {1, 1, 1,
+                        -1,  -1,  -1,
+                       1, 1, 1};
         public MainForm()
         {
             InitializeComponent();
         }
 
-        public void changeColor(object cell)
+        public void ChangeCellColor(object cell)
         {
             PictureBox pictureBox = cell as PictureBox;
             if(pictureBox.BackColor == Color.White)
@@ -32,49 +45,59 @@ namespace Hopfield_Network
             }
         }
 
+        private void ResetOutput()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
+
+                cellOutput.BackColor = Color.White;
+            }
+        }
+
         private void cell_1_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_2_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_3_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_4_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_5_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_6_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_7_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_8_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void cell_9_Click(object sender, EventArgs e)
         {
-            changeColor(sender);
+            ChangeCellColor(sender);
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -88,18 +111,6 @@ namespace Hopfield_Network
                 PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
 
                 cellInput.BackColor = Color.White;
-                cellOutput.BackColor = Color.White;
-            }
-
-            generateButton.Enabled = false;
-        }
-
-        private void ResetOutput()
-        {
-            for (int i = 0; i < 9; i++)
-            {
-                PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
-
                 cellOutput.BackColor = Color.White;
             }
         }
@@ -147,12 +158,16 @@ namespace Hopfield_Network
                 {
                     newPattern = Calculate(pattern1, weight);
 
+                    if (newPattern.SequenceEqual(iPlus)) newPattern = plus;
+                    if (newPattern.SequenceEqual(iMinus)) newPattern = minus;
+
                     for (int i = 0; i < pattern1.Length; i++)
                     {
                         PictureBox cellOutput = (PictureBox)this.Controls.Find("cellOutput_" + (i + 1), true)[0];
                         if (newPattern[i] == -1) cellOutput.BackColor = Color.White;
                         else cellOutput.BackColor = Color.Black;
                     }
+
                 });
 
                 thread.Start();
@@ -160,41 +175,43 @@ namespace Hopfield_Network
             finally
             {
                 generateButton.Enabled = true;
+
+                if (newPattern.SequenceEqual(plus) || newPattern.SequenceEqual(minus)) label.Text = "Component\nMatches";
+                else label.Text = "Discrepancy\nFound";
             }
         }
 
         public int[] Calculate(int[] pattern, int[,] weight)
         {
             int[] newPattern = new int[9];
-            int[] plus = {-1, 1, -1,
-                           1, 1,  1,
-                          -1, 1, -1};
-            int[] minus = {-1, -1, -1,
-                            1,  1,  1,
-                           -1, -1, -1};
-            int count = 0;
 
-            loophere:
-            for(int row = 0; row < pattern.Length; row++)
+            int iteration = 0;
+            int maxIteration = 10;
+
+            while(iteration < maxIteration)
             {
-                int value = 0;
-                for(int col = 0; col < pattern.Length; col++)
+                for (int row = 0; row < pattern.Length; row++)
                 {
-                    value += pattern[col] * weight[row, col];
+                    int value = 0;
+                    for (int col = 0; col < pattern.Length; col++)
+                    {
+                        value += pattern[col] * weight[row, col];
+                    }
+                    // threshold
+                    newPattern[row] = value > 0 ? 1 : -1;
                 }
-                // threshold
-                newPattern[row] = value > 0 ? 1 : -1;
+
+                //if (radioButtonPlus.Checked && newPattern.SequenceEqual(plus)) return newPattern;
+                //if (radioButtonMinus.Checked && newPattern.SequenceEqual(minus)) return newPattern;
+
+                if (newPattern.SequenceEqual(plus)) return newPattern;
+                if (newPattern.SequenceEqual(minus)) return newPattern;
+                pattern = newPattern;
+
+                iteration++;
             }
 
-            if (radioButtonPlus.Checked && newPattern.SequenceEqual(plus)) return newPattern;
-            if (radioButtonMinus.Checked && newPattern.SequenceEqual(minus)) return newPattern;
-
-            pattern = newPattern;
-
-            if (count > 50) return pattern;
-            
-            count++;
-            goto loophere;
+            return pattern;
         }
 
         private void radioButtonPlus_CheckedChanged(object sender, EventArgs e)
