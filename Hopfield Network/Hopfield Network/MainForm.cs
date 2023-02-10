@@ -175,7 +175,7 @@ namespace Hopfield_Network
             finally
             {
                 generateButton.Enabled = true;
-
+                Thread.Sleep(1000);
                 if (newPattern.SequenceEqual(plus) || newPattern.SequenceEqual(minus)) label.Text = "Component\nMatches";
                 else label.Text = "Discrepancy\nFound";
             }
@@ -184,19 +184,30 @@ namespace Hopfield_Network
         public int[] Calculate(int[] pattern, int[,] weight)
         {
             int[] newPattern = new int[9];
+            int[] values = new int[9];
+
+            DataForm dataForm = new DataForm();
+            new Thread(() =>
+            {
+                dataForm.ShowDialog();
+            }).Start();
 
             int iteration = 0;
             int maxIteration = 10;
-
-            while(iteration < maxIteration)
+            
+            while (iteration < maxIteration)
             {
+                dataForm.AddCount();
                 for (int row = 0; row < pattern.Length; row++)
                 {
                     int value = 0;
                     for (int col = 0; col < pattern.Length; col++)
                     {
-                        value += pattern[col] * weight[row, col];
+                        values[col] = pattern[col] * weight[row, col];
+                        value += values[col];
                     }
+                    dataForm.AddData(values);
+                    dataForm.AddResult(value);
                     // threshold
                     newPattern[row] = value > 0 ? 1 : -1;
                 }
